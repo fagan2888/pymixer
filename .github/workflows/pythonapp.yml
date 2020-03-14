@@ -29,3 +29,7 @@ jobs:
         pip install pytest mock coverage
         python -m coverage run --source=pymixer -m pytest -vvs tests/
         python -m coverage report -m
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
