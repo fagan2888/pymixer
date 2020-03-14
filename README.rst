@@ -1,0 +1,51 @@
+PyMixer
+=======
+
+**PyMixer** is a simple api client for the Mixer ( Streaming plateforme ).
+
+Installation
+------------
+
+.. code:: python
+
+    pip install pymixer
+
+Quickstart
+----------
+
+
+.. code:: python
+
+   In [1]: from pymixer.oauth import OAuth
+   In [2]: mixer = OAuth(my_client_id, my_client_secret, 'https://httpbin.org/get', 'myappname')
+
+You can test the client by using the **cli** method as follow
+
+.. code:: python
+
+   In [3]: mixer.cli()
+   In [4]: session = mixer.session
+   In [5]: resp = session.get('users/current')
+
+If you want to use it in a web project, the logic will be as follow
+
+.. code:: python
+ 
+   from pymixer.oauth import OAuth
+  
+   @url('/request-code/')
+   def request_code(request, \*args, \*\*kwargs):
+      mixer = OAuth(my_client_id, my_client_secret, 'https://myapp.com/userinfo/', 'myappname')
+      # get the authorize url 
+      authorize_url = mixer.authorize_url
+      return redirect(authorize_url)
+
+   @url('/userinfo/')
+   def userinfo(request):
+      mixer = OAuth(my_client_id, my_client_secret, 'https://myapp.com/userinfo/', 'myappname')
+      code = request.get('code')
+      # get access data
+      access_data = mixer.get_access_data(code)
+      # get userinfo
+      resp = mixer.session.get('users/current')
+
