@@ -1,0 +1,11 @@
+sudo: false
+language: python
+python:
+    - '3'
+install:
+    - pip install coverage coveralls
+script:
+    - python -m coverage run --source=pymixer -m pytest -vs tests/
+after_success:
+    - python -m coverage report
+    - coveralls
