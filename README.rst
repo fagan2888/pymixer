@@ -3,10 +3,12 @@ PyMixer
 
 .. image:: https://github.com/josuebrunel/pymixer/workflows/Python%20application/badge.svg
     :target: https://github.com/josuebrunel/pymixer/workflows/Python%20application/badge.svg
-.. image:: https://coveralls.io/repos/github/josuebrunel/MySDQ/badge.svg?branch=master
-    :target: https://coveralls.io/github/josuebrunel/MySDQ?branch=master
-.. image:: http://pepy.tech/badge/mysdq
-    :target: http://pepy.tech/count/mysdq
+.. image:: https://travis-ci.org/josuebrunel/pymixer.svg?branch=master
+    :target: https://travis-ci.org/josuebrunel/pymixer
+.. image:: https://coveralls.io/repos/github/josuebrunel/pymixer/badge.svg?branch=master
+    :target: https://coveralls.io/github/josuebrunel/pymixer?branch=master
+.. image:: http://pepy.tech/badge/pymixer
+    :target: http://pepy.tech/count/pymixer
 
 
 **PyMixer** is a simple api client for the Mixer ( Streaming plateforme ).
