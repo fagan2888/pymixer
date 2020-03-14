@@ -3,7 +3,7 @@ language: python
 python:
     - '3.7'
 install:
-    - pip install coverage coveralls
+    - pip install coverage coveralls pytest mock rauth
 script:
     - python -m coverage run --source=pymixer -m pytest -vs tests/
 after_success:
