@@ -60,13 +60,9 @@ class Client(object):
             self.token = TokenJar(**data)
         return data
 
-    @property
-    def session(self):
-        token = None
-        if self.token and self.token.access_token:
-            token = self.token.access_token
+    def get_session(self):
         return OAuth2Session(
-            self.client_id, self.client_secret, token, service=self.service)
+            self.client_id, self.client_secret, self.token.access_token, service=self.service)
 
     def cli(self):
         # get authorization code

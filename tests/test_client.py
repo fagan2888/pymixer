@@ -48,6 +48,6 @@ def test_authorization_grant(client):
         assert client.token.is_valid() is True
         time.sleep(1)
         assert client.token.is_valid() is False
-        session = client.session
+        session = client.get_session()
         assert session.access_token == client.token.access_token
         assert session.service == client.service
